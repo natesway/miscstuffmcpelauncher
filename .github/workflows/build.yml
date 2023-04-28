@@ -39,7 +39,7 @@ jobs:
     - name: Configure
       run: cd mcpelauncher-patchesrpc && cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DCMAKE_TOOLCHAIN_FILE=${{ steps.setup-ndk.outputs.ndk-path }}/build/cmake/android.toolchain.cmake -DANDROID_ABI=${{ matrix.abi }} "-DCMAKE_CXX_FLAGS=-Wl,--strip-all -fvisibility=hidden"
     - name: Build
-      run: cd mcpelauncher-patchesrpc && cmake --build build --config ${{env.BUILD_TYPE}} --target mcpelauncher-patchesrpc
+      run: cd mcpelauncher-patchesrpc && cmake --build build --config ${{env.BUILD_TYPE}} --target mcpelauncherpatchesrpc
     
     - uses: actions/upload-artifact@v2
       with:
